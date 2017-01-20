@@ -1,7 +1,7 @@
 package eu.sig.training.ch04;
 
 // tag::CheckingAccount[]
-public class CheckingAccount extends AccountsUtil implements Account
+public class CheckingAccount extends BaseAccounts implements Account
 {
     public Transfer makeTransfer(String counterAccount, Money amount)
         throws BusinessException {

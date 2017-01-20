@@ -1,6 +1,6 @@
 package eu.sig.training.ch04;
 
-public abstract class AccountsUtil
+public abstract class BaseAccounts
 {
 	public static final float INTEREST_PERCENTAGE = 0.01f;
 	private Money balance = new Money();
@@ -15,7 +15,7 @@ public abstract class AccountsUtil
         }
     }
 
-	public <T extends AccountsUtil> Transfer getTransferResult(Class<T> acct1, String counterAccount, Money amount) throws BusinessException
+	public <T extends BaseAccounts> Transfer getTransferResult(Class<T> acct1, String counterAccount, Money amount) throws BusinessException
 	{
 		int sum = 0; // <1>
 		for (int i = 0; i < counterAccount.length(); i++)

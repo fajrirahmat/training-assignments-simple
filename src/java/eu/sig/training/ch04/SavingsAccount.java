@@ -1,7 +1,7 @@
 package eu.sig.training.ch04;
 
 // tag::SavingsAccount[]
-public class SavingsAccount extends AccountsUtil
+public class SavingsAccount extends BaseAccounts
 {
 	private CheckingAccount registeredCounterAccount;
     public Transfer makeTransfer(String counterAccount, Money amount) 
