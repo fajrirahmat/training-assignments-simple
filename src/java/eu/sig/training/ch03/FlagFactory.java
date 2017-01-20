@@ -1,10 +1,16 @@
 package eu.sig.training.ch03;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class FlagFactory {
+
+	Map<Nationality, ArrayList<Color>> colorMap = new HashMap<Nationality, ArrayList<Color>>();
+
 
     // tag::getFlag[]
     public List<Color> getFlagColors(Nationality nationality) {
