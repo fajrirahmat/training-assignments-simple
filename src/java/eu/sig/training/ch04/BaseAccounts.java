@@ -15,17 +15,14 @@ public abstract class BaseAccounts
         }
     }
 
-	public <T extends BaseAccounts> Transfer getTransferResult(Class<T> acct1, String counterAccount, Money amount) throws BusinessException
-	{
+	public <T extends BaseAccounts> Transfer getTransferResult(Class<T> acct1, String counterAccount, Money amount) throws BusinessException{
 		int sum = 0; // <1>
-		for (int i = 0; i < counterAccount.length(); i++)
-		{
+		for (int i = 0; i < counterAccount.length(); i++){
 			char character = counterAccount.charAt(i);
             int characterValue = Character.getNumericValue(character);
             sum = sum + (9 - i) * characterValue;
         }
-        if (sum % 11 == 0) {
-            // 2. Look up counter account and make transfer object:
+        if (sum % 11 == 0) { 
 			CheckingAccount acct = Accounts.findAcctByNumber(counterAccount);
 			Transfer result = new Transfer(acct1, acct, amount); // <2>
             return result;
